@@ -6,6 +6,7 @@
         "yarn": ">=1.22.10"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.15.2",
         "@rails/actioncable": "^6.0.0",
         "@rails/activestorage": "^6.0.0",
         "@rails/ujs": "^6.0.0",
@@ -26,7 +27,9 @@
         "webpack-dev-server": "^3.11.2"
     },
     "babel": {
-        "presets": ["./node_modules/@rails/webpacker/package/babel/preset.js"]
+        "presets": [
+            "./node_modules/@rails/webpacker/package/babel/preset.js"
+        ]
     },
     "browserslist": [
         "defaults"
