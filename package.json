@@ -2,7 +2,7 @@
     "name": "gitfinder",
     "private": true,
     "engines": {
-        "node": ">=15.4.0",
+        "node": ">=14.15.4",
         "yarn": ">=1.22.10"
     },
     "dependencies": {
