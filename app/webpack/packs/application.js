@@ -6,7 +6,11 @@
 import Rails from "@rails/ujs";
 import Turbolinks from "turbolinks";
 
+// SCSS/CSS
 import "../stylesheets/application.scss";
+
+// JS
+import "../javascripts/home.js";
 
 Rails.start();
 Turbolinks.start();
