@@ -1,29 +1,21 @@
-const search_form = require("./components/search_form.js").render();
+const search_form  = require("./components/search_form.js").render();
+const profile_card = require("./components/github_profile_card.js");
 
-jQuery(function() {
+jQuery(() => {
 
     $("#app").append(
         search_form
     );
 
-    /**
-        $("#search-button").click(() => {
-        });
+    $("#search-button").click(() => {
+        let data = {
+            username: $("#search_input").val()
+        };
 
-
-        const modal = document.querySelector('.modal');
-
-        const showModal = document.querySelector('.show-modal');
-        const closeModal = document.querySelectorAll('.close-modal');
-
-        showModal.addEventListener('click', function() {
-            modal.classList.remove('hidden')
-        });
-
-        closeModal.forEach(close => {
-            close.addEventListener('click', function() {
-                modal.classList.add('hidden')
-            });
-        });
-    **/
+        $("#app")
+            .empty()
+            .append(
+                profile_card.render(data)
+            );
+    });
 });
