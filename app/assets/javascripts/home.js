@@ -1,21 +1,35 @@
-const search_form  = require("./components/search_form.js").render();
-const profile_card = require("./components/github_profile_card.js");
+import { callToast } from "./helpers/swal_functions";
+import { searchForm } from "./components/search_form";
+import { profileCard } from "./components/github_profile_card";
 
 jQuery(() => {
-
-    $("#app").append(
-        search_form
-    );
+    $("#app")
+        .append(
+            searchForm()
+        );
 
     $("#search-button").click(() => {
         let data = {
             username: $("#search_input").val()
         };
 
-        $("#app")
-            .empty()
-            .append(
-                profile_card.render(data)
-            );
+        if(data.username) {
+            $("#app")
+                .empty()
+                .append(
+                    profileCard(data)
+                );
+        } else {
+            callToast({
+                type: 'error',
+                message: 'Usuário não encontrado!'
+            });
+
+            $("#app")
+                .empty()
+                .append(
+                    searchForm()
+                );
+        }
     });
 });
