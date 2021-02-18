@@ -1,4 +1,4 @@
-export function render() {
+export function searchForm() {
     return `
 	    <div>
 	        <div class="container h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8">
