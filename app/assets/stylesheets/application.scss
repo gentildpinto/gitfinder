@@ -6,5 +6,7 @@
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/solid';
+// sweetalert2
+@import '~sweetalert2/dist/sweetalert2';
 // customs
 @import "./home";
