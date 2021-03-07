@@ -3,8 +3,8 @@ class SearchController < ApplicationController
   end
 
   def search
-    if params[:username] == "gentil"
-      @user = User.new("gentilp")
+    @user = User.new(params[:username])
+    if @user
       render "profile/index"
     else
       session[:not_found_user] = true
