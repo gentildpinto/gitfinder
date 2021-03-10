@@ -3,8 +3,8 @@ class SearchController < ApplicationController
   end
 
   def search
-    @user = User.new(params[:username])
-    if @user
+    @user = GithubUser.new(params[:username])
+    if @user.exist?
       render "profile/index"
     else
       session[:not_found_user] = true
