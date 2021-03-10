@@ -8,7 +8,11 @@
 			<!-- Image for mobile view-->
 			<div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" style="background-image: url('<%= @user.avatar_url %>')">
 			</div>
-			<h1 class="text-3xl font-bold pt-8 lg:pt-0"><%= @user.username %></h1>
+			<h1 class="text-3xl font-bold pt-8 lg:pt-0">
+				<a href="<%= @user.html_url %>" target="_blank" class="hover:text-green-700 text-gray-600 font-bold">
+				  	<%= @user.username %>
+				</a> 
+			</h1>
 			<div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
 			<% if @user.company %>
 				<p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start">
@@ -31,7 +35,7 @@
 			<% if @user.location %>
 				<p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
 					<svg class="h-4 fill-current text-green-700 pr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-						<path d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"/>
+  						<path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
 					</svg>
 					<%= @user.location %>
 				</p>
@@ -46,14 +50,23 @@
 					</a>
 				</p>
 			<% end %>
+			<p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
+				<i class="fas fa-code-branch h-4 fill-current text-green-700 pr-4"></i>
+				&nbsp;&nbsp;<%= @user.public_repos %> repositories
+			</p>
+			<p class="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
+				<svg class="h-4 fill-current text-green-700 pr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  					<path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+  					<path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+  					<path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+				</svg>
+				<%= @user.followers %> followers
+				&#8226;
+				<%= @user.following %> following
+			</p>
 			<p class="pt-8 text-sm">
 				<%= @user.bio %>
 			</p>
-			<div class="pt-12 pb-8">
-				<a href="<%= @user.html_url %>" target="_blank" class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full">
-				  Follow on GitHub
-				</a> 
-			</div>
 		</div>
 	</div>
 
