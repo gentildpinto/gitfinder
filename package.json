@@ -2,10 +2,10 @@
     "name": "gitfinder",
     "private": true,
     "engines": {
-        "node": ">=14.15.4",
-        "yarn": ">=1.22.10"
+        "node": ">=12.16.2",
+        "yarn": ">=1.22.4"
     },
-    "script": {
+    "scripts": {
         "webpack": "bin/webpack"
     },
     "dependencies": {
