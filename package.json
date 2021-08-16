@@ -5,6 +5,9 @@
         "node": ">=14.15.4",
         "yarn": ">=1.22.10"
     },
+    "script": {
+        "webpack": "bin/webpack"
+    },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.2",
         "@rails/actioncable": "^6.0.0",
